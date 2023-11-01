@@ -19,7 +19,11 @@ const crearClientes = async (req, res, next) => {
       },
     });
     if (cliente) {
-      res.send("El cliente ya existe!");
+      res.json({
+        msg: "El cliente ya existe!",
+        data: [],
+        ok: true,
+      });
     } else {
       await db.Client.create({
         nombre,
@@ -32,7 +36,11 @@ const crearClientes = async (req, res, next) => {
         estado,
       });
       const data = await db.Client.findAll();
-      res.send(data);
+      res.json({
+        msg: "Cliente creado correctamente!",
+        data: data,
+        ok: false,
+      });
     }
   } catch (error) {
     res.send(error);
