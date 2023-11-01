@@ -1,9 +1,14 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize("Gestion_Stock", "postgres", "1597530", {
-  host: "localhost",
-  dialect: "postgres",
-});
+const sequelize = new Sequelize(
+  process.env.DB_NAME,
+  process.env.DB_USER,
+  process.env.DB_PASSWORD,
+  {
+    host: `${process.env.DB_HOST}:${process.env.DB_PORT}`,
+    dialect: "postgres",
+  }
+);
 
 const Users = require("./database/models/users")(sequelize);
 const Client = require("./database/models/clientes")(sequelize);
