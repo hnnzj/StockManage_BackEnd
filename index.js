@@ -5,10 +5,10 @@ const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5001;
 
-const user_Routes = require("../api/routes/userRoutes");
-const product_Routes = require("../api/routes/productRoutes");
-const clientes_Routes = require("../api/routes/clientesRoutes");
-const pedidos_Routes = require("../api/routes/pedidosRoutes");
+const user_Routes = require("../routes/userRoutes");
+const product_Routes = require("../routes/productRoutes");
+const clientes_Routes = require("../routes/clientesRoutes");
+const pedidos_Routes = require("../routes/pedidosRoutes");
 
 app.use(bodyParser.json());
 app.use(cors());
