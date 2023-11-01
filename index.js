@@ -4,10 +4,7 @@ var bodyParser = require("body-parser");
 const cors = require("cors");
 const app = express();
 const port = 5001;
-const db = require("../api/database");
-const jwt = require("jsonwebtoken");
-const dotenv = require("dotenv");
-const userRegister = require("./controllers/authentication/register");
+
 const user_Routes = require("../api/routes/userRoutes");
 const product_Routes = require("../api/routes/productRoutes");
 const clientes_Routes = require("../api/routes/clientesRoutes");
